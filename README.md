@@ -13,7 +13,7 @@
 
 ### 🏠 [View Online Demo](https://karar-carki.now.sh/)
 
-![screenshot][https://raw.githubusercontent.com/orcuntuna/karar-carki/master/screenshot.png]
+![screenshot](https://raw.githubusercontent.com/orcuntuna/karar-carki/master/screenshot.png)
 
 ## Install
 
