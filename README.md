@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Karar Çarkı 👋</h1>
+<h1>Welcome to Karar Çarkı 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -11,9 +11,7 @@
 
 > Kararsız kaldığınızda seçeneklerinizi girin ve kararı sizin yerinize karar çarkı versin.
 
-### 🏠 [Homepage](https://github.com/orcuntuna/karar-carki)
-
-### ✨ [Demo](https://karar-carki.now.sh/)
+### 🏠 [View Online Demo](https://karar-carki.now.sh/)
 
 ## Install
 
