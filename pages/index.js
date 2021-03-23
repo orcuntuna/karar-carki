@@ -12,10 +12,10 @@ function Index() {
       </Head>
       <Row>
         <Col span={24} md={12} className="col">
-          <Options/>
+          <Options />
         </Col>
         <Col span={24} md={12} className="col">
-          <Results/>
+          <Results />
         </Col>
       </Row>
     </div>
