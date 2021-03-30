@@ -18,15 +18,28 @@ class CreateOption extends React.Component {
       <React.Fragment>
         <h1>Karar Çarkı</h1>
         <h2>Arada Derede Kalma Diye!</h2>
-        <Select
-          defaultValue="default"
-          style={{ width: 200 }}
-          onChange={(e) => this.handleChange(e)}
-          className="select-option"
-        >
-          <Option value="default">Varsayılan</Option>
-          <Option value="selected-delete">Seçilen silinsin</Option>
-        </Select>
+        <div className="select-config-container">
+          <Select
+            defaultValue="default"
+            style={{ width: 200 }}
+            onChange={(e) => this.handleChange(e)}
+            className="select-option"
+          >
+            <Option value="default">Varsayılan</Option>
+            <Option value="selected-delete">Seçilen silinsin</Option>
+            <Option value="selected-disable">
+              Seçilen etkisiz hale getirilsin
+            </Option>
+          </Select>
+          <Button
+            style={{ marginLeft: 10 }}
+            icon="retweet"
+            type="geekblue-5"
+            shape="circle"
+            onClick={() => this.props.store.main.enable_all_option()}
+          />
+        </div>
+
         <form
           onSubmit={(e) => this.onSubmitForm(e)}
           className="option create-option"

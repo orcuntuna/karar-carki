@@ -128,5 +128,10 @@ h1 {
 }
 
 .select-option {
+}
+
+.select-config-container {
+  display: flex;
+  align-items: center;
   margin-top: 30px;
 }

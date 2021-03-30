@@ -14,8 +14,9 @@ class MainStore {
     if (this.options.length > 0) {
       key = this.options[this.options.length - 1].key + 1;
     }
-    this.options = [...this.options, { key, value }];
+    this.options = [...this.options, { key, value, disable: false }];
     this.input_text = "";
+    console.log(this.options);
   }
 
   @action remove_option(key) {
@@ -23,8 +24,24 @@ class MainStore {
   }
 
   @action remove_index_option(index) {
-    this.options = this.options.filter((_, optionIndex) => {
-      return optionIndex != index;
+    this.options = this.options.filter(
+      (_, optionIndex) => optionIndex != index
+    );
+  }
+
+  @action disable_index_option(index) {
+    this.options = this.options.map((option, optionIndex) => {
+      if (optionIndex == index) {
+        option.disable = true;
+      }
+      return option;
+    });
+  }
+
+  @action enable_all_option() {
+    this.options = this.options.map((option) => {
+      option.disable = false;
+      return option;
     });
   }
 
@@ -63,6 +80,9 @@ class MainStore {
   @action trigger_config(key) {
     if (this.config === "selected-delete") {
       this.remove_index_option(key);
+    }
+    if (this.config === "selected-disable") {
+      this.disable_index_option(key);
     }
   }
 }

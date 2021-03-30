@@ -29,15 +29,29 @@ class Results extends React.Component {
       alert("Lütfen en az 2 seçenek giriniz!");
       return;
     }
+    const checkOptionsDisable = this.props.store.main.options.some((option) => {
+      return option.disable === false;
+    });
+
+    if (!checkOptionsDisable) {
+      alert(
+        "Tüm seçenekler devre dışı kaldı lütfen tekrarlama butonuna basınız!"
+      );
+      return;
+    }
 
     let counter = 0;
     let random_item_index = 0;
     let random_color_index = 0;
     this.props.store.main.start();
     this.props.store.main.toggle_loading();
+
     let preview_timer = setInterval(
       function() {
-        if (counter === 10) {
+        if (
+          counter >= 10 &&
+          !this.props.store.main.options[random_item_index].disable
+        ) {
           this.props.store.main.toggle_loading();
           this.props.store.main.trigger_config(random_item_index);
           clearInterval(preview_timer);
