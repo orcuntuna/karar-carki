@@ -1,126 +1,137 @@
-body{
-    background: #2c2c54;
-    color: #fff;
+body {
+  background: #2c2c54;
+  color: #fff;
 }
 
-.col{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow-y: auto;
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-.result-box{
-    width: 250px;
-    height: 250px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 28px;
-    line-height: 40px;
-    font-weight: 600;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+.result-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.result-box svg{
-    fill: #333;
+.result-box svg {
+  fill: #333;
 }
 
-.generate{
-    width: 250px;
-    height: 55px;
-    background: #fff;
-    color: #333;
-    border: none;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    cursor: pointer;
-    outline: 0;
+.generate {
+  width: 250px;
+  height: 55px;
+  background: #fff;
+  color: #333;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  outline: 0;
 }
 
-.generate:hover{
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.generate:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.options{
-    width: 400px;
-    max-width: 100%;
+.options {
+  width: 400px;
+  max-width: 100%;
 }
 
-.option{
-    display: flex;
-    margin-bottom: 10px;
+.option {
+  display: flex;
+  margin-bottom: 10px;
 }
 
-.option button{
-    margin-left: 10px;
+.option button {
+  margin-left: 10px;
 }
 
-.option input{
-    color: #2c2c54;
+.option input {
+  color: #2c2c54;
 }
 
-.option input::placeholder{
-    color: #aaa;
+.option input::placeholder {
+  color: #aaa;
 }
 
-.create-option{
+.create-option {
+  margin-top: 18px;
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  color: #fff;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.list {
+  max-height: 35vh;
+  overflow-y: auto;
+}
+
+.welcome {
+  margin: 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+@media only screen and (max-width: 500px) {
+  .col {
+    height: auto;
+    overflow-y: inherit;
+  }
+  .options {
+    padding: 0 30px;
     margin-top: 30px;
-    margin-bottom: 20px;
+  }
+  .results {
+    margin-top: 20px;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+  .generate {
+    margin-bottom: 30px;
+  }
+  .list {
+    max-height: inherit;
+    overflow-y: inherit;
+  }
+  .welcome {
+    text-align: center;
+    margin-bottom: 5px;
+  }
 }
 
-h1,h2{
-    color: #fff;
-    margin: 0;
+.select-option {
 }
 
-h1{
-    font-size: 3em;
-}
-
-.list{
-    max-height: 35vh;
-    overflow-y: auto;
-}
-
-.welcome{
-    margin: 0;
-    font-size: 16px;
-    color: #ccc;
-}
-
-@media only screen and (max-width: 500px){
-    .col{
-        height: auto;
-        overflow-y: inherit;
-    }
-    .options{
-        padding: 0 30px;
-        margin-top: 30px;
-    }
-    .results{
-        margin-top: 20px;
-    }
-    h1,h2{
-        text-align: center;
-    }
-    .generate{
-        margin-bottom: 30px;
-    }
-    .list{
-        max-height: inherit;
-        overflow-y: inherit;
-    }
-    .welcome{
-        text-align: center;
-        margin-bottom: 5px;
-    }
+.select-config-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
 }
