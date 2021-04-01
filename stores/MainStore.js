@@ -61,6 +61,10 @@ class MainStore {
     this.started = true;
   }
 
+  @action stop() {
+    this.started = false;
+  }
+
   @action toggle_loading() {
     this.loading = !this.loading;
   }
