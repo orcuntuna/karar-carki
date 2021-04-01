@@ -34,7 +34,10 @@ class Results extends React.Component {
     });
 
     if (!checkOptionsDisable) {
-      this.props.store.main.enable_all_option();
+      alert(
+        "Tüm seçenekler devre dışı kaldı lütfen tekrarlama butonuna basınız!"
+      );
+      return;
     }
 
     let counter = 0;
