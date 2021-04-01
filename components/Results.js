@@ -24,23 +24,17 @@ const colors = [
 @inject("store")
 @observer
 class Results extends React.Component {
-  async onPressGenerate() {
-    console.log(this.props.store.main.started);
-    if (this.props.store.main.started === true) {
-      return;
-    }
+  onPressGenerate() {
     if (this.props.store.main.options.length <= 1) {
       alert("Lütfen en az 2 seçenek giriniz!");
       return;
     }
-    const checkOptionsDisable = await this.props.store.main.options.some(
-      (option) => {
-        return option.disable === false;
-      }
-    );
-    console.log(checkOptionsDisable);
+    const checkOptionsDisable = this.props.store.main.options.some((option) => {
+      return option.disable === false;
+    });
+
     if (!checkOptionsDisable) {
-      await this.props.store.main.enable_all_option();
+      this.props.store.main.enable_all_option();
     }
 
     let counter = 0;
@@ -51,14 +45,12 @@ class Results extends React.Component {
 
     let preview_timer = setInterval(
       function() {
-        console.log(this.props.store.main.options[random_item_index].disable);
         if (
           counter >= 10 &&
           !this.props.store.main.options[random_item_index].disable
         ) {
           this.props.store.main.toggle_loading();
           this.props.store.main.trigger_config(random_item_index);
-          this.props.store.main.stop();
           clearInterval(preview_timer);
           return;
         }
